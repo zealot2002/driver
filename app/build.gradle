@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.zzy.driver"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        multiDexEnabled true
+
+        //SCM
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    compile 'com.android.support:multidex:1.0.2'
+
+    implementation project(':common')
+    implementation project(':community')
+    implementation project(':home')
+    implementation project(':login')
+    implementation project(':question')
+    implementation project(':school')
+    implementation project(':settings')
+    implementation project(':update')
+    implementation project(':usercentre')
+    implementation project(':welcome')
+}
+

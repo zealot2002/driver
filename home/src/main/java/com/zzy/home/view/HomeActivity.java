@@ -1,19 +1,31 @@
 package com.zzy.home.view;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
+
+import com.zzy.common.utils.MyToast;
+import com.zzy.commonlib.utils.ActivityManager;
 import com.zzy.home.R;
 import com.zzy.home.base.BaseHomeActivity;
+
+
 /**
  * 首页
  */
 public class HomeActivity extends BaseHomeActivity{
 
-
 /***********************************************************************************************/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        new JobRequest.Builder(TestJob.TAG)
+//                .setExecutionWindow(3_000L, 4_000L)
+//                .setBackoffCriteria(5_000L, JobRequest.BackoffPolicy.LINEAR)
+//                .setRequirementsEnforced(true)
+//                .build()
+//                .schedule();
     }
+
     @Override
     protected TabContext getTabContext() {
         TabContext tabContext = new TabContext();
@@ -29,27 +41,23 @@ public class HomeActivity extends BaseHomeActivity{
         tabContext.setNormalTextColorId(R.color.home_tab_text_color_normal);
         tabContext.setCheckedTextColorId(R.color.home_tab_text_color_checked);
 
-        tabContext.setFragments(new Fragment[]{new Fragment(),new Fragment(),new Fragment(),new Fragment()});
+        tabContext.setFragments(new Fragment[]{new SchoolFragment(),new ExamFragment(),new CommunityFragment(),new MineFragment()});
         return tabContext;
     }
-//
-//
-//    private long exitTime = 0;
-//    /**
-//     * 再按一次退出程序
-//     */
-//    @Override
-//    public boolean onKeyDown(int keyCode, KeyEvent event) {
-//        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
-//            if ((System.currentTimeMillis() - exitTime) > 2000) {
-//                //T.showShort(this, "再按一次退出程序");
-//                SnackyHelper.showDefault(this,"再按一次退出程序");
-//                exitTime = System.currentTimeMillis();
-//            } else {
-//                ActivityManager.getInstance().exitApp(this);
-//            }
-//            return true;
-//        }
-//        return super.onKeyDown(keyCode, event);
-//    }
+
+
+    private long exitTime = 0;
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if ((System.currentTimeMillis() - exitTime) > 2000) {
+                MyToast.show(this, "再按一次退出程序");
+                exitTime = System.currentTimeMillis();
+            } else {
+                ActivityManager.getInstance().exitApp(this);
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }

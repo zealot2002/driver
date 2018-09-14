@@ -44,7 +44,7 @@ abstract public class BaseLoadingActivity extends BaseActivity implements BaseLo
     @Override
     public void showDisconnect() {
         setContentView(R.layout.disconnect);
-        findViewById(R.id.btnReload).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.rlDisconnect).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 reload(false);

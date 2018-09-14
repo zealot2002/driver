@@ -5,9 +5,9 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.util.Log;
 
+import com.evernote.android.job.JobManager;
 import com.zhy.autolayout.config.AutoLayoutConifg;
-import com.zhy.autolayout.utils.AutoLayoutHelper;
-import com.zhy.autolayout.utils.AutoUtils;
+import com.zzy.driver.job.MyJobCreator;
 import com.zzy.common.utils.ApplicationUtils;
 import com.zzy.common.utils.CommonUtils;
 import com.zzy.core.serverCenter.SCM;
@@ -54,6 +54,8 @@ public class MyApplication extends Application {
             ApplicationUtils.init(this);
             /*初始化设计稿尺寸*/
             AutoLayoutConifg.getInstance().useDeviceSize().init(this);
+
+            JobManager.create(this).addJobCreator(new MyJobCreator());
             //sp content provider
 //            SPHelper.init(this);
         } catch (Exception e) {

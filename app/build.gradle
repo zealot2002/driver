@@ -19,9 +19,7 @@ android {
                 arguments = [moduleName: project.getName()]
             }
         }
-
     }
-
 }
 
 dependencies {
@@ -39,5 +37,6 @@ dependencies {
     implementation project(':update')
     implementation project(':usercentre')
     implementation project(':welcome')
+
 }
 

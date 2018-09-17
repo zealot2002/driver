@@ -1,1 +1,1 @@
-include ':app', ':welcome', ':home', ':common', ':settings', ':update', ':login', ':usercentre', ':community', ':question', ':school'
+include ':app', ':welcome', ':home', ':common', ':settings', ':update', ':login', ':usercentre', ':community', ':question', ':school', ':map', ':webview'

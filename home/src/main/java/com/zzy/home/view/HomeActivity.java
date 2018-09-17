@@ -3,8 +3,13 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
 
+import com.zzy.common.constants.ParamConstants;
+import com.zzy.common.constants.ScmConstants;
 import com.zzy.common.utils.MyToast;
+import com.zzy.commonlib.log.MyLog;
 import com.zzy.commonlib.utils.ActivityManager;
+import com.zzy.core.serverCenter.SCM;
+import com.zzy.core.serverCenter.ScCallback;
 import com.zzy.home.R;
 import com.zzy.home.base.BaseHomeActivity;
 
@@ -13,7 +18,7 @@ import com.zzy.home.base.BaseHomeActivity;
  * 首页
  */
 public class HomeActivity extends BaseHomeActivity{
-
+    private static final String TAG = "HomeActivity";
 /***********************************************************************************************/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +29,21 @@ public class HomeActivity extends BaseHomeActivity{
 //                .setRequirementsEnforced(true)
 //                .build()
 //                .schedule();
+
+        try {
+            SCM.getInstance().req(this, ScmConstants.API_CHECK_UPDATE, new ScCallback() {
+                @Override
+                public void onCallback(boolean b, Bundle data, String tag) {
+                    if(b){
+//                        finish();
+                    }else {
+//                        MyLog.e(TAG,"return:"+data);
+                    }
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

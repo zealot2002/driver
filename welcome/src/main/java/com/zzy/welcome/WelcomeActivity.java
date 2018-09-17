@@ -4,11 +4,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.zzy.common.constants.ScmConstants;
 import com.zzy.commonlib.log.MyLog;
 import com.zzy.core.serverCenter.SCM;
 import com.zzy.core.serverCenter.ScCallback;
+
 
 public class WelcomeActivity extends AppCompatActivity {
     private static final String TAG = "WelcomeActivity";
@@ -31,9 +31,15 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private void entryMain() {
         try {
-            SCM.getInstance().req(WelcomeActivity.this, ScmConstants.API_ENTRY_HOME, new ScCallback() {
+//            Bundle bundle = new Bundle();
+//            bundle.putString(ParamConstants.PARAM_TITLE,"北京海淀驾校");
+//            bundle.putString(ParamConstants.PARAM_DESC,"北京市昌平区回龙观西大街104号");
+//            bundle.putDouble(ParamConstants.PARAM_LAT,39.915071);
+//            bundle.putDouble(ParamConstants.PARAM_LNG,116.403907);
+
+            SCM.getInstance().req(WelcomeActivity.this, ScmConstants.API_ENTRY_HOME,new ScCallback() {
                 @Override
-                public void onCallback(boolean b, String data, String tag) {
+                public void onCallback(boolean b, Bundle data, String tag) {
                     if(b){
                         finish();
                     }else {

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.util.Log;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.evernote.android.job.JobManager;
 import com.zhy.autolayout.config.AutoLayoutConifg;
 import com.zzy.driver.job.MyJobCreator;
@@ -43,7 +44,7 @@ public class MyApplication extends Application {
     }
 
     private void initMainProcessCoreLib() {
-
+        SDKInitializer.initialize(this);
     }
 
     private void initMultiProcessCoreLib() {

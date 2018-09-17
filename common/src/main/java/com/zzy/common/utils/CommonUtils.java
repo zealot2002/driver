@@ -41,7 +41,6 @@ public class CommonUtils {
             e.printStackTrace();
         }
     }
-
     private static String getCurrentProcessName(Application application) {
         int pid = android.os.Process.myPid();
         String processName = "";

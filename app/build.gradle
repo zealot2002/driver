@@ -20,6 +20,49 @@ android {
             }
         }
     }
+    //配置keystore签名
+    signingConfigs {
+        debug {
+            try {
+                storeFile file("./keystore/driver_debug.jks")
+                storePassword "driver"
+                keyAlias "driver"
+                keyPassword "driver"
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
+        }
+        release {
+            try {
+                storeFile file("./keystore/driver_release.jks")
+                storePassword "driver"
+                keyAlias "driver"
+                keyPassword "driver"
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            //是否混淆
+            minifyEnabled false
+            //是否移除无用资源
+            zipAlignEnabled false
+            signingConfig signingConfigs.debug
+        }
+        release {
+            //是否混淆
+            minifyEnabled true
+            //是否移除无用资源
+            zipAlignEnabled true
+            //混淆的配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
 }
 
 dependencies {
@@ -37,6 +80,7 @@ dependencies {
     implementation project(':update')
     implementation project(':usercentre')
     implementation project(':welcome')
+    implementation project(':map')
 
 }
 

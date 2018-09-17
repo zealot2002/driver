@@ -24,4 +24,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(path: ':common')
+
+    compile 'com.qianwen:update-app:3.5.2'
+    compile 'com.qianwen:okhttp-utils:3.8.0'
 }

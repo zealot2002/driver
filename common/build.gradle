@@ -35,14 +35,16 @@ dependencies {
 
     //基础库
     compile 'com.github.zealot2002:ACommonLib:0.3.0'
-    //服务中心
-    compile 'com.github.zealot2002:serverCentre:0.1.0'
+    //服务中心 start
+    compile 'com.github.zealot2002:serverCentre:0.1.2'
     compile files('libs/scmProcessors.jar')
     compile files('libs/scmAnnotations.jar')
     compile 'com.squareup:javapoet:1.7.0'
+    //服务中心 end
 
-
-
+    //job schedule
     compile 'com.evernote:android-job:1.2.6'
+
+    compile 'cn.jzvd:jiaozivideoplayer:6.3.1'
 
 }

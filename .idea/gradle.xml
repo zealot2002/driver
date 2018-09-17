@@ -13,11 +13,13 @@
             <option value="$PROJECT_DIR$/community" />
             <option value="$PROJECT_DIR$/home" />
             <option value="$PROJECT_DIR$/login" />
+            <option value="$PROJECT_DIR$/map" />
             <option value="$PROJECT_DIR$/question" />
             <option value="$PROJECT_DIR$/school" />
             <option value="$PROJECT_DIR$/settings" />
             <option value="$PROJECT_DIR$/update" />
             <option value="$PROJECT_DIR$/usercentre" />
+            <option value="$PROJECT_DIR$/webview" />
             <option value="$PROJECT_DIR$/welcome" />
           </set>
         </option>

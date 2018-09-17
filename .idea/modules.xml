@@ -8,11 +8,13 @@
       <module fileurl="file://$PROJECT_DIR$/driver.iml" filepath="$PROJECT_DIR$/driver.iml" />
       <module fileurl="file://$PROJECT_DIR$/home/home.iml" filepath="$PROJECT_DIR$/home/home.iml" />
       <module fileurl="file://$PROJECT_DIR$/login/login.iml" filepath="$PROJECT_DIR$/login/login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/map/map.iml" filepath="$PROJECT_DIR$/map/map.iml" />
       <module fileurl="file://$PROJECT_DIR$/question/question.iml" filepath="$PROJECT_DIR$/question/question.iml" />
       <module fileurl="file://$PROJECT_DIR$/school/school.iml" filepath="$PROJECT_DIR$/school/school.iml" />
       <module fileurl="file://$PROJECT_DIR$/settings/settings.iml" filepath="$PROJECT_DIR$/settings/settings.iml" />
       <module fileurl="file://$PROJECT_DIR$/update/update.iml" filepath="$PROJECT_DIR$/update/update.iml" />
       <module fileurl="file://$PROJECT_DIR$/usercentre/usercentre.iml" filepath="$PROJECT_DIR$/usercentre/usercentre.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webview/webview.iml" filepath="$PROJECT_DIR$/webview/webview.iml" />
       <module fileurl="file://$PROJECT_DIR$/welcome/welcome.iml" filepath="$PROJECT_DIR$/welcome/welcome.iml" />
     </modules>
   </component>

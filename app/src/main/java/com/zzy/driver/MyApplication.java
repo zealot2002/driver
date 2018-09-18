@@ -8,6 +8,7 @@ import android.util.Log;
 import com.baidu.mapapi.SDKInitializer;
 import com.evernote.android.job.JobManager;
 import com.zhy.autolayout.config.AutoLayoutConifg;
+import com.zzy.flysp.core.spHelper.SPHelper;
 import com.zzy.driver.job.MyJobCreator;
 import com.zzy.common.utils.ApplicationUtils;
 import com.zzy.common.utils.CommonUtils;
@@ -44,21 +45,24 @@ public class MyApplication extends Application {
     }
 
     private void initMainProcessCoreLib() {
+        /*baidu map*/
         SDKInitializer.initialize(this);
     }
 
     private void initMultiProcessCoreLib() {
         try {
-            //服务中心
+            /*server centre*/
             SCM.getInstance().init(this);
-            /**/
+            /*application instance*/
             ApplicationUtils.init(this);
-            /*初始化设计稿尺寸*/
+            /*auto layout*/
             AutoLayoutConifg.getInstance().useDeviceSize().init(this);
-
+           /*job*/
             JobManager.create(this).addJobCreator(new MyJobCreator());
-            //sp content provider
-//            SPHelper.init(this);
+            /*sp content provider*/
+            SPHelper.init(this);
+//            /*event bus*/
+//            HermesEventBus.getDefault().init(this);
         } catch (Exception e) {
             e.printStackTrace();
         }

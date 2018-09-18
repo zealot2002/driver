@@ -5,7 +5,7 @@ package com.zzy.common.constants;
  * @date 2018/8/27
  */
 
-public class BusConstants {
+public class SpConstants {
     /*下单成功*/
-    public static final String EVENT_ORDER_SUCCESS = "orderSuccess";
+    public static final String QUESTION_BANK = "questionBank";
 }

@@ -5,13 +5,13 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import com.zzy.common.constants.ScmConstants;
-import com.zzy.commonlib.log.MyLog;
+import com.zzy.common.constants.SpConstants;
 import com.zzy.core.serverCenter.SCM;
 import com.zzy.core.serverCenter.ScCallback;
+import com.zzy.flysp.core.spHelper.SPHelper;
 
 
 public class WelcomeActivity extends AppCompatActivity {
-    private static final String TAG = "WelcomeActivity";
     private final int SHOW_TIME = 3000; //开屏页时间
     private static Handler handler;
     /*******************************************************************************************************/
@@ -23,28 +23,24 @@ public class WelcomeActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                entryMain();
+                entryNext();
             }
 
         }, SHOW_TIME);
     }
 
-    private void entryMain() {
+    private void entryNext() {
         try {
-//            Bundle bundle = new Bundle();
-//            bundle.putString(ParamConstants.PARAM_TITLE,"北京海淀驾校");
-//            bundle.putString(ParamConstants.PARAM_DESC,"北京市昌平区回龙观西大街104号");
-//            bundle.putDouble(ParamConstants.PARAM_LAT,39.915071);
-//            bundle.putDouble(ParamConstants.PARAM_LNG,116.403907);
+            int qbType = SPHelper.getInt(SpConstants.QUESTION_BANK,0);
+            String scmAction = ScmConstants.API_ENTRY_HOME;
+            if(qbType == 0){
+                scmAction = ScmConstants.API_ENTRY_QUESTION_BANK;
+            }
 
-            SCM.getInstance().req(WelcomeActivity.this, ScmConstants.API_ENTRY_HOME,new ScCallback() {
+            SCM.getInstance().req(WelcomeActivity.this,scmAction,new ScCallback() {
                 @Override
                 public void onCallback(boolean b, Bundle data, String tag) {
-                    if(b){
-                        finish();
-                    }else {
-                        MyLog.e(TAG,"return:"+data);
-                    }
+                    finish();
                 }
             });
         } catch (Exception e) {

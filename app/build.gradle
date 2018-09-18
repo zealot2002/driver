@@ -62,12 +62,15 @@ android {
             signingConfig signingConfigs.release
         }
     }
+    dexOptions {
+        jumboMode true
+    }
 
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+
     compile 'com.android.support:multidex:1.0.2'
 
     implementation project(':common')

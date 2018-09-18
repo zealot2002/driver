@@ -1,2 +1,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zzy.question" />
+    package="com.zzy.question" >
+
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        >
+
+        <activity
+            android:name=".view.QuestionBankActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/translucentStyle"
+            />
+
+    </application>
+
+
+</manifest>

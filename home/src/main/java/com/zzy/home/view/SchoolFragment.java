@@ -1,21 +1,21 @@
 package com.zzy.home.view;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.zzy.common.base.BaseLoadingFragment;
 import com.zzy.home.R;
+import com.zzy.home.base.BaseHomeTitleBarLoadingFragment;
+
 /**
  * @author zzy
  * @date 2018/9/14
  */
 
-public class SchoolFragment extends BaseLoadingFragment{
-    private Context context;
+public class SchoolFragment extends BaseHomeTitleBarLoadingFragment {
+
 
 /****************************************************************************************************/
     @Override
@@ -26,7 +26,7 @@ public class SchoolFragment extends BaseLoadingFragment{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        context = getActivity();
+        setCity("北京");
         updateUI(null);
 //        presenter = new PagePresenter(this);
 //        presenter.getPageData(context, pageCode,true,1);

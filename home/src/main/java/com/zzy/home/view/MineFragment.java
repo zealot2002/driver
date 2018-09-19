@@ -7,15 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.zzy.common.base.BaseLoadingFragment;
 import com.zzy.home.R;
+import com.zzy.home.base.BaseHomeTitleBarLoadingFragment;
 
 /**
  * @author zzy
  * @date 2018/9/14
  */
 
-public class MineFragment extends BaseLoadingFragment{
+public class MineFragment extends BaseHomeTitleBarLoadingFragment {
     private Context context;
 
 /****************************************************************************************************/

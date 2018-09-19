@@ -3,10 +3,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
 
-import com.zzy.common.constants.ParamConstants;
 import com.zzy.common.constants.ScmConstants;
 import com.zzy.common.utils.MyToast;
-import com.zzy.commonlib.log.MyLog;
+import com.zzy.common.utils.StatusBarUtils;
 import com.zzy.commonlib.utils.ActivityManager;
 import com.zzy.core.serverCenter.SCM;
 import com.zzy.core.serverCenter.ScCallback;
@@ -18,11 +17,13 @@ import com.zzy.home.base.BaseHomeActivity;
  * 首页
  */
 public class HomeActivity extends BaseHomeActivity{
-    private static final String TAG = "HomeActivity";
+
+
 /***********************************************************************************************/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        StatusBarUtils.setStatusBarFontIconDark(this);
 //        new JobRequest.Builder(TestJob.TAG)
 //                .setExecutionWindow(3_000L, 4_000L)
 //                .setBackoffCriteria(5_000L, JobRequest.BackoffPolicy.LINEAR)
@@ -49,10 +50,10 @@ public class HomeActivity extends BaseHomeActivity{
     @Override
     protected TabContext getTabContext() {
         TabContext tabContext = new TabContext();
-        TabBean tab1 = new TabBean("驾校",R.mipmap.home_tab1_normal,R.mipmap.home_tab1_checked);
-        TabBean tab2 = new TabBean("考试",R.mipmap.home_tab2_normal,R.mipmap.home_tab2_checked);
-        TabBean tab3 = new TabBean("社区",R.mipmap.home_tab3_normal,R.mipmap.home_tab3_checked);
-        TabBean tab4 = new TabBean("我的",R.mipmap.home_tab3_normal,R.mipmap.home_tab3_checked);
+        TabBean tab1 = new TabBean("驾校",R.mipmap.home_school_icon_normal,R.mipmap.home_school_icon_selected);
+        TabBean tab2 = new TabBean("考试",R.mipmap.home_exam_icon_normal,R.mipmap.home_exam_icon_selected);
+        TabBean tab3 = new TabBean("社区",R.mipmap.home_community_icon_normal,R.mipmap.home_community_icon_selected);
+        TabBean tab4 = new TabBean("我的",R.mipmap.home_mine_icon_normal,R.mipmap.home_mine_icon_selected);
         tabContext.getTabBeanList().add(tab1);
         tabContext.getTabBeanList().add(tab2);
         tabContext.getTabBeanList().add(tab3);

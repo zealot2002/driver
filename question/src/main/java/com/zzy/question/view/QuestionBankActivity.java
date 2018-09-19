@@ -1,7 +1,6 @@
 package com.zzy.question.view;
 
 import android.os.Bundle;
-import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,9 +16,6 @@ import com.zzy.core.serverCenter.SCM;
 import com.zzy.core.serverCenter.ScCallback;
 import com.zzy.flysp.core.spHelper.SPHelper;
 import com.zzy.question.R;
-
-import java.util.Calendar;
-import java.util.TimeZone;
 
 
 public class QuestionBankActivity extends BaseActivity implements View.OnClickListener {
@@ -83,27 +79,27 @@ public class QuestionBankActivity extends BaseActivity implements View.OnClickLi
             SPHelper.save(SpConstants.QUESTION_BANK,selectedBank);
         }else if(v.getId() == R.id.llCar1){
             clearAll();
-            ivCar1.setImageResource(R.mipmap.car1_selected);
+            ivCar1.setImageResource(R.mipmap.question_car1_selected);
             selectedBank = 1;
         }else if(v.getId() == R.id.llCar2){
             clearAll();
-            ivCar2.setImageResource(R.mipmap.car2_selected);
+            ivCar2.setImageResource(R.mipmap.question_car2_selected);
             selectedBank = 2;
         }else if(v.getId() == R.id.llCar3){
             clearAll();
-            ivCar3.setImageResource(R.mipmap.car3_selected);
+            ivCar3.setImageResource(R.mipmap.question_car3_selected);
             selectedBank = 3;
         }else if(v.getId() == R.id.llCar4){
             clearAll();
-            ivCar4.setImageResource(R.mipmap.car4_selected);
+            ivCar4.setImageResource(R.mipmap.question_car4_selected);
             selectedBank = 4;
         }
     }
 
     private void clearAll() {
-        ivCar1.setImageResource(R.mipmap.car1_normal);
-        ivCar2.setImageResource(R.mipmap.car2_normal);
-        ivCar3.setImageResource(R.mipmap.car3_normal);
-        ivCar4.setImageResource(R.mipmap.car4_normal);
+        ivCar1.setImageResource(R.mipmap.question_car1_normal);
+        ivCar2.setImageResource(R.mipmap.question_car2_normal);
+        ivCar3.setImageResource(R.mipmap.question_car3_normal);
+        ivCar4.setImageResource(R.mipmap.question_car4_normal);
     }
 }

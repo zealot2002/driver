@@ -1,27 +1,25 @@
 package com.zzy.common.base;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.view.View;
 
 import com.zzy.common.R;
 import com.zzy.common.widget.LoadingHelper;
-import com.zzy.commonlib.base.BaseActivity;
 import com.zzy.commonlib.base.BaseLoadingView;
 
 /**
  * zzy
  */
 
-abstract public class BaseLoadingActivity extends BaseActivity implements BaseLoadingView {
+abstract public class BaseTitleBarLoadingActivity extends BaseTitleBarActivity implements BaseLoadingView {
     private LoadingHelper loadingDialog;
-    private Context context;
+    private View disconnectView,contentView;
+/********************************************************************************************************/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        context = this;
-        loadingDialog = new LoadingHelper(context);
+        loadingDialog = new LoadingHelper(this);
     }
 
     public void showLoading(String s) {
@@ -32,7 +30,7 @@ abstract public class BaseLoadingActivity extends BaseActivity implements BaseLo
 
     @Override
     public void showLoading() {
-        showLoading("请稍候");
+        showLoading("");
     }
 
     public void closeLoading() {
@@ -43,13 +41,19 @@ abstract public class BaseLoadingActivity extends BaseActivity implements BaseLo
 
     @Override
     public void showDisconnect() {
-        setContentView(R.layout.disconnect);
-        findViewById(R.id.rlDisconnect).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                reload(false);
-            }
-        });
+        if(contentView!=null){
+            getContainer().removeView(contentView);
+        }
+        if(disconnectView == null){
+            disconnectView = View.inflate(this,R.layout.disconnect,null);
+            disconnectView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    reload(false);
+                }
+            });
+        }
+        getContainer().addView(disconnectView);
     }
 
     @Override
@@ -65,7 +69,13 @@ abstract public class BaseLoadingActivity extends BaseActivity implements BaseLo
     @CallSuper
     @Override
     public void updateUI(Object o) {
-        setContentView(getLayoutId());
+        if(disconnectView!=null){
+            getContainer().removeView(disconnectView);
+        }
+        if(contentView == null){
+            contentView = View.inflate(this,getLayoutId(),null);
+        }
+        getContainer().addView(contentView);
     }
 
     @Override

@@ -42,7 +42,7 @@
                 android:id="@+id/ivCar1"
                 android:layout_width="244px"
                 android:layout_height="128px"
-                android:src="@mipmap/car1_selected"
+                android:src="@mipmap/question_car1_selected"
                 android:scaleType="fitXY"
                 />
             <TextView
@@ -76,7 +76,7 @@
                 android:id="@+id/ivCar2"
                 android:layout_width="244px"
                 android:layout_height="128px"
-                android:src="@mipmap/car2_normal"
+                android:src="@mipmap/question_car2_normal"
                 android:scaleType="fitXY"
                 />
             <TextView
@@ -116,7 +116,7 @@
                 android:id="@+id/ivCar3"
                 android:layout_width="244px"
                 android:layout_height="128px"
-                android:src="@mipmap/car3_normal"
+                android:src="@mipmap/question_car3_normal"
                 android:scaleType="fitXY"
                 />
             <TextView
@@ -150,7 +150,7 @@
                 android:id="@+id/ivCar4"
                 android:layout_width="244px"
                 android:layout_height="128px"
-                android:src="@mipmap/car4_normal"
+                android:src="@mipmap/question_car4_normal"
                 android:scaleType="fitXY"
                 />
             <TextView

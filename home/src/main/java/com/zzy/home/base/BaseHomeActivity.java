@@ -5,9 +5,13 @@ import android.support.annotation.CallSuper;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.zzy.common.utils.StatusBarUtils;
 import com.zzy.commonlib.base.BaseActivity;
 import com.zzy.home.R;
 
@@ -24,21 +28,31 @@ abstract public class BaseHomeActivity extends BaseActivity implements View.OnCl
     private LinearLayout[] mTabs;
     private int currentTabIndex;
     private TabContext tabContext;
+    private FrameLayout fragmentContainer;
     /***********************************************************************************************/
     @CallSuper
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_base_activity);
+        fixStatusHeight();
+
         currentTabIndex = 0;
         tabContext = getTabContext();
-
-        initTabButton();
-        initFragment();
+        setupTabButton();
+        setupFragment();
         showFragment(0);
     }
 
-    private void initFragment() {
+    private void fixStatusHeight() {
+        fragmentContainer = findViewById(R.id.fragment_container);
+        int h = StatusBarUtils.getStatusBarHeight(this);
+        RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) fragmentContainer.getLayoutParams();
+        lp.setMargins(0, h, 0, 0);
+        fragmentContainer.setLayoutParams(lp);
+    }
+
+    private void setupFragment() {
     //            fragments = new Fragment[]{new LoanFragment(), new ServiceFragment(), new MineFragment()};
         fragments = tabContext.fragments;
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, fragments[0]).show(fragments[0]).commitAllowingStateLoss();
@@ -49,7 +63,7 @@ abstract public class BaseHomeActivity extends BaseActivity implements View.OnCl
     /**
      * 初始化Tab
      */
-    private void initTabButton() {
+    private void setupTabButton() {
         llTab = findViewById(R.id.llTab);
         mTabs = new LinearLayout[4];
         mTabs[0] = findViewById(R.id.llTab1);

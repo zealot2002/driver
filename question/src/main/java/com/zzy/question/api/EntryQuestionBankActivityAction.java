@@ -20,6 +20,8 @@ public class EntryQuestionBankActivityAction implements ScAction {
     @Override
     public void invoke(Context context, Bundle param,String tag, final ScCallback callback) {
         ActivityUtils.startActivity(context,QuestionBankActivity.class);
-        callback.onCallback(true,Bundle.EMPTY,tag);
+        if(callback!=null){
+            callback.onCallback(true,Bundle.EMPTY,tag);
+        }
     }
 }

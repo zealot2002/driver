@@ -102,7 +102,10 @@ abstract public class BaseHomeActivity extends BaseActivity implements View.OnCl
         currentTabIndex = index;
 
         changeTabColor(currentTabIndex);
+        onShowFragment(index);
     }
+
+    protected abstract void onShowFragment(int position);
 
     /**
      * 切换时变色

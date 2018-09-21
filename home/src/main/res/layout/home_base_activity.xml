@@ -17,12 +17,12 @@
         android:layout_height="1px"
         android:background="@color/divider"
         android:layout_alignParentBottom="true"
-        android:layout_above="@+id/llTab"
+        android:layout_marginBottom="50dp"
         />
     <LinearLayout
         android:id="@+id/llTab"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="50dp"
         android:background="#ffffff"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
@@ -32,7 +32,7 @@
             android:id="@+id/llTab1"
             style="@style/home_tab_style">
             <ImageView
-                android:layout_width="22dp"
+                android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center"
                 android:duplicateParentState="true"
@@ -47,7 +47,7 @@
             android:id="@+id/llTab2"
             style="@style/home_tab_style">
             <ImageView
-                android:layout_width="22dp"
+                android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center"
                 android:duplicateParentState="true"
@@ -61,7 +61,7 @@
             android:id="@+id/llTab3"
             style="@style/home_tab_style">
             <ImageView
-                android:layout_width="22dp"
+                android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center"
                 android:duplicateParentState="true"
@@ -75,7 +75,7 @@
             android:id="@+id/llTab4"
             style="@style/home_tab_style">
             <ImageView
-                android:layout_width="22dp"
+                android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center"
                 android:duplicateParentState="true"

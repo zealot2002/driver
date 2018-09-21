@@ -11,5 +11,6 @@ public class ParamConstants {
     public static final String PARAM_LNG = "lng";
     public static final String PARAM_TITLE = "title";
     public static final String PARAM_DESC = "desc";
+    public static final String PARAM_ACTION = "action";
 
 }

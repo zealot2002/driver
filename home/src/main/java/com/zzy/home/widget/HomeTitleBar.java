@@ -44,4 +44,13 @@ public class HomeTitleBar extends RelativeLayout{
     public void setCity(String city){
         tvCity.setText(city);
     }
+
+    public void hideCity(){
+        if(llLeft!=null)
+            llLeft.setVisibility(GONE);
+    }
+    public void hideSearch(){
+        if(llRight!=null)
+            llRight.setVisibility(GONE);
+    }
 }

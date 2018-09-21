@@ -51,5 +51,6 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:statusBarColor">@color/white</item>
+        <item name="android:launchMode">singleTask</item>
     </style>
 </resources>

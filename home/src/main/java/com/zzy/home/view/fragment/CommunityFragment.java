@@ -1,5 +1,6 @@
-package com.zzy.home.view;
+package com.zzy.home.view.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -14,8 +15,8 @@ import com.zzy.home.base.BaseHomeTitleBarLoadingFragment;
  * @date 2018/9/14
  */
 
-public class SchoolFragment extends BaseHomeTitleBarLoadingFragment {
-
+public class CommunityFragment extends BaseHomeTitleBarLoadingFragment {
+    private Context context;
 
 /****************************************************************************************************/
     @Override
@@ -26,7 +27,9 @@ public class SchoolFragment extends BaseHomeTitleBarLoadingFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        setCity("北京");
+        context = getActivity();
+        titleBar.hideCity();
+        titleBar.hideSearch();
         updateUI(null);
 //        presenter = new PagePresenter(this);
 //        presenter.getPageData(context, pageCode,true,1);
@@ -34,6 +37,6 @@ public class SchoolFragment extends BaseHomeTitleBarLoadingFragment {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.home_school_fragment;
+        return R.layout.home_community_fragment;
     }
 }

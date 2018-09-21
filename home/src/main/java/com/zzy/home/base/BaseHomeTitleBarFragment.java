@@ -16,7 +16,7 @@ import com.zzy.home.widget.HomeTitleBar;
  */
 
 abstract public class BaseHomeTitleBarFragment extends BaseFragment{
-    private HomeTitleBar titleBar;
+    protected HomeTitleBar titleBar;
     private View rootView;
 /***************************************************************************************************/
     @Nullable

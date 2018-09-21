@@ -1,6 +1,7 @@
 <resources>
     <string name="symbol_rmb">&#165;</string>
 
+    <string name="city">城市</string>
     <string name="school">驾校</string>
     <string name="exam">考试</string>
     <string name="community">社区</string>

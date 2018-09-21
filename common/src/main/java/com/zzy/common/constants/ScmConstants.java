@@ -12,4 +12,5 @@ public class ScmConstants {
     public static final String API_ENTRY_QUESTION_BANK = "entryQuestionBank";
 
     public static final String API_CHECK_UPDATE = "checkUpdate";
+    public static final String API_TEST_IDLE = "testIdle";
 }

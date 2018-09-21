@@ -21,6 +21,8 @@ public class EntryWebViewActivityAction implements ScAction {
     @Override
     public void invoke(Context context, Bundle bundle, String tag, ScCallback scCallback) {
         ActivityUtils.startActivity(context,bundle,WebViewActivity.class);
-        scCallback.onCallback(true,null,tag);
+        if(scCallback!=null){
+            scCallback.onCallback(true,bundle,tag);
+        }
     }
 }

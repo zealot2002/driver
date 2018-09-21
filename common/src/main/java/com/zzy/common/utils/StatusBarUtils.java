@@ -1,6 +1,5 @@
 package com.zzy.common.utils;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
@@ -8,11 +7,6 @@ import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 
 /**
  * @author zzy
@@ -35,7 +29,6 @@ public class StatusBarUtils {
         } else  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN){
             activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);//4.4版本本身就含有暗色阴影，不作其他处理即可
         }
-
     }
 
     public static int getStatusBarHeight(Context context){

@@ -1,4 +1,4 @@
-package com.zzy.home.view;
+package com.zzy.home.view.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,7 +15,7 @@ import com.zzy.home.base.BaseHomeTitleBarLoadingFragment;
  * @date 2018/9/14
  */
 
-public class MineFragment extends BaseHomeTitleBarLoadingFragment {
+public class ExamFragment extends BaseHomeTitleBarLoadingFragment {
     private Context context;
 
 /****************************************************************************************************/
@@ -28,6 +28,8 @@ public class MineFragment extends BaseHomeTitleBarLoadingFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         context = getActivity();
+        titleBar.hideSearch();
+        titleBar.setCity("北京");
         updateUI(null);
 //        presenter = new PagePresenter(this);
 //        presenter.getPageData(context, pageCode,true,1);
@@ -35,6 +37,6 @@ public class MineFragment extends BaseHomeTitleBarLoadingFragment {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.home_mine_fragment;
+        return R.layout.home_exam_fragment;
     }
 }

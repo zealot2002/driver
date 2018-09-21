@@ -21,6 +21,8 @@ public class EntryMapActivityAction implements ScAction {
     @Override
     public void invoke(Context context, Bundle bundle, String tag, ScCallback scCallback) {
         ActivityUtils.startActivity(context,bundle,MapActivity.class);
-        scCallback.onCallback(true,Bundle.EMPTY,tag);
+        if(scCallback!=null){
+            scCallback.onCallback(true,Bundle.EMPTY,tag);
+        }
     }
 }

@@ -8,8 +8,9 @@ import android.util.Log;
 import com.baidu.mapapi.SDKInitializer;
 import com.evernote.android.job.JobManager;
 import com.zhy.autolayout.config.AutoLayoutConifg;
+import com.zzy.common.job.MyJobCreator;
+import com.zzy.common.utils.ActivityUtils;
 import com.zzy.flysp.core.spHelper.SPHelper;
-import com.zzy.driver.job.MyJobCreator;
 import com.zzy.common.utils.ApplicationUtils;
 import com.zzy.common.utils.CommonUtils;
 import com.zzy.core.serverCenter.SCM;
@@ -61,8 +62,9 @@ public class MyApplication extends Application {
             JobManager.create(this).addJobCreator(new MyJobCreator());
             /*sp content provider*/
             SPHelper.init(this);
-//            /*event bus*/
-//            HermesEventBus.getDefault().init(this);
+
+            /*listen all activity lifecycle*/
+            ActivityUtils.registerActivityLifecycle(this);
         } catch (Exception e) {
             e.printStackTrace();
         }

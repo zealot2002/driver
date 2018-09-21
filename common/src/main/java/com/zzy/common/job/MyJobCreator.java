@@ -1,4 +1,4 @@
-package com.zzy.driver.job;
+package com.zzy.common.job;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,10 +16,11 @@ public class MyJobCreator implements JobCreator {
     @Nullable
     public Job create(@NonNull String tag) {
         switch (tag) {
-            case DemoSyncJob.TAG:
-                return new DemoSyncJob();
-            case TestJob.TAG:
-                return new TestJob();
+            case LazyJob.TAG:
+                return new LazyJob();
+
+            case LazyWorkJob.TAG:
+                return new LazyWorkJob();
             default:
                 return null;
         }

@@ -17,8 +17,9 @@ import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.zzy.common.constants.ParamConstants;
+import com.zzy.commonlib.base.BaseActivity;
 
-public class MapActivity extends Activity {
+public class MapActivity extends BaseActivity {
 	private static final String TAG = "MapActivity";
 	private double lng,lat;
 	private String title,desc;

@@ -7,12 +7,12 @@
 
         <activity
             android:name=".view.HomeActivity"
-            android:launchMode="singleTask"
             android:theme="@style/activity_theme"
-
-            >
-
-        </activity>
+            />
+        <activity
+            android:name=".view.CityActivity"
+            android:theme="@style/activity_theme"
+            />
     </application>
 
 </manifest>

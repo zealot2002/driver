@@ -72,8 +72,8 @@ abstract public class BaseHomeTitleBarLoadingFragment extends BaseHomeTitleBarFr
         }
         if(contentView == null){
             contentView = View.inflate(getActivity(),getLayoutId(),null);
+            getContainer().addView(contentView);
         }
-        getContainer().addView(contentView);
     }
 
     @Override

@@ -8,4 +8,7 @@ package com.zzy.common.constants;
 public class SpConstants {
     /*下单成功*/
     public static final String QUESTION_BANK = "questionBank";
+
+
+
 }
